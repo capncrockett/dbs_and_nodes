@@ -1,7 +1,7 @@
 create table users
 (
     id serial not null unique,
-    name text,
+    first_name text,
     email text,
     created_at timestamp,
     updated_at timestamp
@@ -9,5 +9,6 @@ create table users
 
 alter table users owner to joe;
 
-INSERT INTO users (name, email) VALUES ('Joe', 'capncrockett@gmail.com');
-INSERT INTO users (name, email) VALUES ('Erik', 'wright.erikj@gmail.com');
+INSERT INTO users (first_name, email) VALUES ('Joe', 'capncrockett@gmail.com');
+INSERT INTO users (first_name, email) VALUES ('Erik', 'wright.erikj@gmail.com');
+INSERT INTO users (first_name, email) VALUES ('Frank', 'franks2000inchtv@gmail.com');
