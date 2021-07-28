@@ -17,18 +17,76 @@ async function main() {
   await client.connect();
 
   // A real SQL query.
-  const users = await client.query("SELECT * from users WHERE id = 2");
-  const users2 = await client.query("SELECT * from users");
-  const instruments = await client.query("SELECT * FROM instruments")
+  // const users = await client.query("SELECT * from users");
 
-  
-  users.rows.forEach((user) => {
-    console.log(user);
-  })
+  // const instruments = await client.query("SELECT * from instruments");
 
-  instruments.rows.forEach((user) => {
-    console.log(user);
-  });
+  // // console.log(instruments.rows);
+
+  // const familiesPercussion = instruments.rows.filter(
+  //   (instrument) => instrument.family === "percussion"
+  // );
+  // console.log(familiesPercussion);
+
+  // const families = instruments.rows.map((instrument) => instrument.family);
+  // console.log(families);
+
+  // const x = function () {
+  //   console.log('I am the x log')
+  // }
+
+  // const y = function (callback) {
+  //   callback ()
+  //   console.log("I used your argument")
+  // }
+
+  // y(x)
+
+  const add = function (a, b) {
+    return a + b;
+  };
+
+  const multiply = function (a, b) {
+    return a * b;
+  };
+
+  const calc = function (num1, num2, callback) {
+    console.log("silly string");
+    num1 += num1
+    num2 += num2
+    return callback(num1, num2);
+  };
+
+  console.log(calc(2, 3, multiply));
+  console.log(calc(2, 3, add));
+
+  console.log(multiply(2, 3));
+
+  // console.log(users.rows)
+
+  // const firstNames = users.rows.map((user) => user.first_name)
+  //   console.log(firstNames)
+
+  // const emails = users.rows.map((user) => user.email)
+  //   console.log(emails)
+
+  // const userObjects = users.rows;
+  // console.log(userObjects);
+
+  // const emails = users.rows.map((row) => row.email);
+  // console.log(emails);
+
+  // const names = users.rows.map(function (row) {
+  //   return row.first_name;
+  // });
+
+  // const names = users.rows.map((row) => {
+  //   const name = row.first_name;
+  //   console.log(name);
+  //   return name.toUpperCase();
+  // });
+
+  // console.log(names);
 
   await client.end();
 }
